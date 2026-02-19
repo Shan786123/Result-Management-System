@@ -4,3 +4,12 @@ clgproject/includess/config.php
 # Ignore OS files
 .DS_Store
 Thumbs.db
+
+# Ignore all actual images in the uploads folder
+clgproject/assets/img/*.jpeg
+clgproject/assets/img/*.jpg
+clgproject/assets/img/*.png
+
+# But DO NOT ignore the default avatar or logos
+!clgproject/assets/img/default_avatar.png
+!clgproject/assets/img/logo1.png
