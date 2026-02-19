@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+    min-height: 100vh;
+}
+
+/* ================= DASHBOARD LAYOUT ================= */
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+    width: 240px;
+    background: #1d2671;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 8px 0;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background: rgba(255, 255, 255, 0.15);
+    border-left: 4px solid #ffd369;
+}
+
+.sidebar ul li.logout a {
+    background: #c33764;
+    margin-top: 20px;
+}
+
+/* ================= CONTENT ================= */
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+/* ================= MARKSHEET CARD ================= */
+.marksheet-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.marksheet-card h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #1d2671;
+}
+
+/* ================= SEMESTER SELECT ================= */
+.semester-form {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.semester-form select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* ================= PRINTABLE MARKSHEET ================= */
+#marksheet-printable {
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+.center {
+    text-align: center;
+    /* font-size: 70px; */
+    margin-bottom: 15px;
+}
+
+/* ================= STUDENT INFO ================= */
+.student-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+/* ================= TABLE ================= */
+.marks-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.marks-table th,
+.marks-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.marks-table th {
+    background: #1d2671;
+    color: #fff;
+    font-size: 14px;
+}
+
+.marks-table td {
+    font-size: 14px;
+}
+
+/* ================= SGPA ================= */
+.sgpa {
+    text-align: right;
+    font-size: 18px;
+    color: #1d2671;
+    margin-top: 10px;
+}
+
+
+
+/* ================= PRINT BUTTON ================= */
+.print-btn {
+    margin-top: 15px;
+    padding: 10px 22px;
+    background: #ffd369;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.print-btn:hover {
+    background: #ffbe33;
+}
+
+/* ================= PRINT STYLES ================= */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #marksheet-printable,
+    #marksheet-printable * {
+        visibility: visible;
+    }
+
+    #marksheet-printable {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    .print-btn,
+    .semester-form,
+    .sidebar {
+        display: none;
+    }
+}
+

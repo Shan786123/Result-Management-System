@@ -1,0 +1,6 @@
+# Ignore database config if it contains passwords
+clgproject/includess/config.php
+
+# Ignore OS files
+.DS_Store
+Thumbs.db

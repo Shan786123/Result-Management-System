@@ -1,0 +1,176 @@
+/* ================= GLOBAL STYLES ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    min-height: 100vh;
+}
+
+/* ================= DASHBOARD LAYOUT ================= */
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+    width: 240px;
+    background: rgba(0, 0, 0, 0.35); /* Dark translucent sidebar */
+    color: #fff;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 8px 0;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background: rgba(255, 255, 255, 0.15);
+    border-left: 4px solid #ffd369;
+}
+
+.sidebar ul li.logout a {
+    background: #c0392b;
+    margin-top: 20px;
+}
+
+/* ================= CONTENT AREA ================= */
+.content {
+    flex: 1;
+    padding: 35px;
+}
+
+/* ================= MAIN CARD (Improved Visibility) ================= */
+.card {
+    max-width: 900px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent light color */
+    padding: 35px;
+    border-radius: 16px;
+    backdrop-filter: blur(12px); /* Glass effect */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card h2 {
+    color: #ffd369; /* Theme yellow for heading visibility */
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.card p {
+    color: #ffffff;
+    opacity: 0.9;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* ================= DASHBOARD GRID ================= */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.dashboard-card {
+    display: block;
+    background: rgba(15, 76, 117, 0.8); /* Darker blue for visibility */
+    padding: 25px;
+    border-radius: 12px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dashboard-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-6px);
+    background: rgba(50, 130, 184, 0.9);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+/* ================= FORM ELEMENTS ================= */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.form-group input, .form-group select {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+
+.success-msg {
+    background: rgba(0, 200, 0, 0.25);
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sidebar ul li a {
+        border-left: none;
+    }
+
+    .content {
+        padding: 20px;
+    }
+}
